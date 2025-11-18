@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Desarrollador" content="Jorghi Cote" />
     <title>Alta de Categorías - NetBeans</title>
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluir archivo de validaciones -->
+    <script src="./assets/js/validaciones.js"></script>
     <style>
       /* Estilos para el formulario de categorías */
       body {
@@ -89,6 +93,13 @@
         border-radius: 4px;
         font-size: 12px;
         font-style: italic;
+      }
+
+      .error-message {
+        color: #d32f2f;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
       }
     </style>
   </head>
