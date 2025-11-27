@@ -13,6 +13,9 @@ Sistema web para la gestión de productos de una empresa de computación desarro
 - HTML5
 - CSS3
 - JavaScript
+- PHP
+- MySQL
+- XAMPP
 
 ## Desarrollador
 - **Jorghi Cote** - Desarrollo y diseño
