@@ -1,5 +1,5 @@
 <?php
-/* @autor: Jorghi Cote */
+/* @autor Jorghi Cote */
 require_once 'database.php';
 
 class Categoria {

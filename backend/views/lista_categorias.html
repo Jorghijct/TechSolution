@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Desarrollador" content="Jorghi Cote" />
+    <title>Lista de Categorías - TechSolutions</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      .btn {
+        background-color: #2196f3;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        display: inline-block;
+      }
+      .developer {
+        text-align: center;
+        margin-top: 30px;
+        font-style: italic;
+      }
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+      }
+      .error {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Lista de Categorías - TechSolutions</h2>
+
+    <?php if (isset($_GET['success'])): ?>
+    <div class="success">Categoría guardada exitosamente!</div>
+    <?php endif; ?>
+
+    <?php if (isset($_GET['error'])): ?>
+    <div class="error">Error al guardar la categoría!</div>
+    <?php endif; ?>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($categorias as $categoria): ?>
+        <tr>
+          <td><?php echo $categoria['id']; ?></td>
+          <td><?php echo htmlspecialchars($categoria['nombre']); ?></td>
+          <td><?php echo htmlspecialchars($categoria['descripcion']); ?></td>
+        </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+
+    <a href="categorias.php" class="btn">Agregar Nueva Categoría</a>
+
+    <div class="developer">Desarrollado por: Jorghi Cote</div>
+  </body>
+</html>
