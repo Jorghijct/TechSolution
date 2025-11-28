@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diagrama MVC - Proyecto NetBeans</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 40px;
+      }
+
+      .box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin: 20px auto;
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .green {
+        border-top: 6px solid #4caf50;
+      }
+      .blue {
+        border-top: 6px solid #2196f3;
+      }
+      .red {
+        border-top: 6px solid #f44336;
+      }
+      .black {
+        border-top: 6px solid #000;
+      }
+
+      .arrow {
+        text-align: center;
+        font-size: 30px;
+        margin: -10px 0;
+        color: #444;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        margin: 5px 0;
+        color: #444;
+      }
+      .developer {
+        text-align: center;
+        color: darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Diagrama del Proyecto - NetBeans</h1>
+    <div class="developer">Desarrollado por: Jorghi Cote</div>
+    <div class="box green">
+      <div class="title">VISTA (V)</div>
+      <p>Interfaz HTML que ve el usuario</p>
+      <ul>
+        <li>categorias.html</li>
+        <li>lista_categorias.html</li>
+        <li>productos.html</li>
+        <li>lista_productos.html</li>
+      </ul>
+    </div>
+
+    <div class="arrow">⬇</div>
+
+    <div class="box blue">
+      <div class="title">CONTROLADOR (C)</div>
+      <p>Recibe datos, llama al modelo y carga la vista</p>
+      <ul>
+        <li>categorias.php</li>
+        <li>lista_categorias.php</li>
+        <li>productos.php</li>
+        <li>lista_productos.php</li>
+      </ul>
+    </div>
+
+    <div class="arrow">⬇</div>
+
+    <div class="box red">
+      <div class="title">MODELO (M)</div>
+      <p>Clases que manejan la lógica y BD</p>
+      <ul>
+        <li>autoload.php</li>
+        <li>categorias.php</li>
+        <li>database.php</li>
+        <li>productos.php</li>
+      </ul>
+    </div>
+
+    <div class="arrow">⬇</div>
+
+    <div class="box black">
+      <div class="title">BASE DE DATOS</div>
+      <p>MySQL / phpMyAdmin</p>
+      <ul>
+        <li>Tabla: categorias</li>
+        <li>Tabla: productos</li>
+      </ul>
+    </div>
+  </body>
+</html>
