@@ -12,13 +12,28 @@ class Producto {
     public $descripcion;
     public $precio;
     public $categoria_id;
-
+    
     public function __construct() {
         $this->db = new Database();
     }
+    // Método requerido por listarConCategoria()
+    private static function getConexion() {
+    $db = new Database();
+    return $db->getConnection();
+}
 
-    public function guardar() {
-        $data = [
+    public static function listarConCategoria() {
+         $conn = self::getConexion();
+         $sql = "SELECT p.*, c.nombre AS categoria
+                 FROM productos p
+                 LEFT JOIN categorias c ON p.categoria_id = c.id
+                 ORDER BY p.id ASC";
+         $stmt = $conn->prepare($sql);
+         $stmt->execute();
+         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+     }
+     public function guardar() {
+         $data = [
             'nombre' => $this->nombre,
             'imagen' => $this->imagen,
             'descripcion' => $this->descripcion,
@@ -44,4 +59,5 @@ class Producto {
         return $db->select("productos");
     }
 }
+
 ?>
